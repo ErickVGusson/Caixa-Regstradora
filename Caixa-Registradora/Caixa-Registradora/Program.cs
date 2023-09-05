@@ -38,6 +38,7 @@ namespace Caixa_Registradora
 
                 Console.ForegroundColor = ConsoleColor.Red;
                 menu = int.Parse(Console.ReadLine());
+                Console.ResetColor();
 
                 Console.Clear();
 
@@ -100,19 +101,22 @@ namespace Caixa_Registradora
                 else if (menu == 2)
                 {
 
-                    Console.WriteLine("Vendas");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\n ____  ____  ____  ____  ____  ____ \r\n||V ||||e ||||n ||||d ||||a ||||s ||\r\n||__||||__||||__||||__||||__||||__||\r\n|/__\\||/__\\||/__\\||/__\\||/__\\||/__\\|\n\n");
+                    Console.ResetColor();
 
                 }
 
                 else if (menu == 3)
                 {
-
-                    Console.WriteLine("\n// Relatório");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\n ____  ____  ____  ____  ____  ____  ____  ____  ____ \r\n||R ||||e ||||l ||||a ||||t ||||ó ||||r ||||i ||||o ||\r\n||__||||__||||__||||__||||__||||__||||__||||__||||__||\r\n|/__\\||/__\\||/__\\||/__\\||/__\\||/__\\||/__\\||/__\\||/__\\|\n\n");
+                    Console.ResetColor();
 
                     Console.WriteLine("Bem vindo ao relatorio!!");
-                    Console.WriteLine("\nProdoto 1: " + produtoNome1 + " - Estoque: " + quantidade1 + " - Valor: " + valor1);
-                    Console.WriteLine("\nProdoto 2: " + produtoNome2 + " - Estoque: " + quantidade2 + " - Valor: " + valor2);
-                    Console.WriteLine("\nProdoto 3: " + produtoNome3 + " - Estoque: " + quantidade3 + " - Valor: " + valor3);
+                    Console.WriteLine("\n- Prodoto 1: " + produtoNome1 + "\n- Estoque: " + quantidade1 + "\n- Valor: " + valor1);
+                    Console.WriteLine("\n- Prodoto 2: " + produtoNome2 + "\n- Estoque: " + quantidade2 + "\n- Valor: " + valor2);
+                    Console.WriteLine("\n- Prodoto 3: " + produtoNome3 + "\n- Estoque: " + quantidade3 + "\n- Valor: " + valor3);
 
                 }
 
