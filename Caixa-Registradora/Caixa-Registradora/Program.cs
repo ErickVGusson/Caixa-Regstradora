@@ -107,7 +107,7 @@ namespace Caixa_Registradora
 
                     int menu_vendas;
                     int vendida;
-                    float vendaDinheiro;
+                    float vendaDinheiro, dinheiroEntregue, troco;
 
                     Console.WriteLine("1 - " + produtoNome1);
                     Console.WriteLine("2 - " + produtoNome2);
@@ -117,7 +117,7 @@ namespace Caixa_Registradora
                     menu_vendas = int.Parse(Console.ReadLine());
                     Console.ResetColor();
 
-                    if ( menu_vendas == 1 ) 
+                    if (menu_vendas == 1)
                     {
 
                         Console.WriteLine("\nProduto: " + produtoNome1);
@@ -129,24 +129,31 @@ namespace Caixa_Registradora
                         vendida = int.Parse(Console.ReadLine());
                         Console.ResetColor();
 
-                        if( vendida > quantidade1 ) 
+                        Console.Write("Dinheiro: ");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        dinheiroEntregue = float.Parse(Console.ReadLine());
+                        Console.ResetColor();
+
+                        vendaDinheiro = vendida * valor1;
+                        troco = dinheiroEntregue - vendaDinheiro;
+
+                        if (vendida > quantidade1 || dinheiroEntregue < vendaDinheiro)
                         {
 
-                            Console.WriteLine("Ta vendendo mais do que tem? Me ensina essa");
+                            Console.WriteLine("Ta vendendo mais do que tem ou dinheiro insuficiente");
 
                         }
                         else
                         {
 
-                            vendaDinheiro = vendida * valor1;
-                            Console.WriteLine("Foram vendidos " + vendida + " " + produtoNome1 + " Totalizando: " + vendaDinheiro);
+                            Console.WriteLine("Foram vendidos " + vendida + " " + produtoNome1 + " Totalizando: " + vendaDinheiro + " Com um troco de: " + troco);
                             quantidade1 -= vendida;
 
                         }
 
                     }
 
-                    else if ( menu_vendas == 2 ) 
+                    else if (menu_vendas == 2)
                     {
 
                         Console.WriteLine("\nProduto: " + produtoNome2);
@@ -158,24 +165,31 @@ namespace Caixa_Registradora
                         vendida = int.Parse(Console.ReadLine());
                         Console.ResetColor();
 
-                        if (vendida > quantidade2)
+                        Console.Write("Dinheiro: ");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        dinheiroEntregue = float.Parse(Console.ReadLine());
+                        Console.ResetColor();
+
+                        vendaDinheiro = vendida * valor2;
+                        troco = dinheiroEntregue - vendaDinheiro;
+
+                        if (vendida > quantidade2 || dinheiroEntregue < vendaDinheiro)
                         {
 
-                            Console.WriteLine("Ta vendendo mais do que tem? Me ensina essa");
+                            Console.WriteLine("Ta vendendo mais do que tem ou dinheiro insuficiente");
 
                         }
                         else
                         {
 
-                            vendaDinheiro = vendida * valor2;
-                            Console.WriteLine("Foram vendidos " + vendida + " " + produtoNome2 + " Totalizando: " + vendaDinheiro);
+                            Console.WriteLine("Foram vendidos " + vendida + " " + produtoNome2 + " Totalizando: " + vendaDinheiro + " Com um troco de: " + troco);
                             quantidade2 -= vendida;
 
                         }
 
                     }
 
-                    else if ( menu_vendas == 3 ) 
+                    else if (menu_vendas == 3)
                     {
 
                         Console.WriteLine("\nProduto: " + produtoNome3);
@@ -187,17 +201,24 @@ namespace Caixa_Registradora
                         vendida = int.Parse(Console.ReadLine());
                         Console.ResetColor();
 
-                        if (vendida > quantidade3)
+                        Console.Write("Dinheiro: ");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        dinheiroEntregue = float.Parse(Console.ReadLine());
+                        Console.ResetColor();
+
+                        vendaDinheiro = vendida * valor3;
+                        troco = dinheiroEntregue - vendaDinheiro;
+
+                        if (vendida > quantidade3 || dinheiroEntregue < vendaDinheiro)
                         {
 
-                            Console.WriteLine("Ta vendendo mais do que tem? Me ensina essa");
+                            Console.WriteLine("Ta vendendo mais do que tem ou dinheiro insuficiente");
 
                         }
                         else
                         {
 
-                            vendaDinheiro = vendida * valor3;
-                            Console.WriteLine("Foram vendidos " + vendida + " " + produtoNome3 + " Totalizando: " + vendaDinheiro);
+                            Console.WriteLine("Foram vendidos " + vendida + " " + produtoNome3 + " Totalizando: " + vendaDinheiro + " Com um troco de: " + troco);
                             quantidade3 -= vendida;
 
                         }
@@ -207,7 +228,7 @@ namespace Caixa_Registradora
                     else
                     {
 
-                        Console.ForegroundColor= ConsoleColor.DarkRed;
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Produto indisponível");
                         Console.ResetColor();
 
@@ -249,6 +270,7 @@ namespace Caixa_Registradora
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.Write("\n\nDeseja continuar no sistema [S/N]: ");
                 loop = Console.ReadLine();
+                Console.Clear();
 
             }
 
