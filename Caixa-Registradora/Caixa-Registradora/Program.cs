@@ -56,7 +56,7 @@ namespace Caixa_Registradora
                     produtoNome1 = Console.ReadLine();
                     Console.ResetColor();
 
-                    Console.Write("Inira o valor do " + produtoNome1 + ": R$");
+                    Console.Write("Inira o valor do " + produtoNome1 + ": R$ ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     valor1 = float.Parse(Console.ReadLine());
                     Console.ResetColor();
@@ -71,7 +71,7 @@ namespace Caixa_Registradora
                     produtoNome2 = Console.ReadLine();
                     Console.ResetColor();
 
-                    Console.Write("Inira o valor do " + produtoNome2 + ": R$");
+                    Console.Write("Inira o valor do " + produtoNome2 + ": R$ ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     valor2 = float.Parse(Console.ReadLine());
                     Console.ResetColor();
@@ -86,7 +86,7 @@ namespace Caixa_Registradora
                     produtoNome3 = Console.ReadLine();
                     Console.ResetColor();
 
-                    Console.Write("Inira o valor do " + produtoNome3 + ": R$");
+                    Console.Write("Inira o valor do " + produtoNome3 + ": R$ ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     valor3 = float.Parse(Console.ReadLine());
                     Console.ResetColor();
@@ -104,6 +104,114 @@ namespace Caixa_Registradora
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("\n ____  ____  ____  ____  ____  ____ \r\n||V ||||e ||||n ||||d ||||a ||||s ||\r\n||__||||__||||__||||__||||__||||__||\r\n|/__\\||/__\\||/__\\||/__\\||/__\\||/__\\|\n\n");
                     Console.ResetColor();
+
+                    int menu_vendas;
+                    int vendida;
+                    float vendaDinheiro;
+
+                    Console.WriteLine("1 - " + produtoNome1);
+                    Console.WriteLine("2 - " + produtoNome2);
+                    Console.WriteLine("3 - " + produtoNome3);
+                    Console.Write("\nDigite o produto para venda: ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    menu_vendas = int.Parse(Console.ReadLine());
+                    Console.ResetColor();
+
+                    if ( menu_vendas == 1 ) 
+                    {
+
+                        Console.WriteLine("\nProduto: " + produtoNome1);
+                        Console.WriteLine("Valor: R$ " + valor1);
+                        Console.WriteLine("Estoque: " + quantidade1);
+
+                        Console.Write("Quantidade vendidida: ");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        vendida = int.Parse(Console.ReadLine());
+                        Console.ResetColor();
+
+                        if( vendida > quantidade1 ) 
+                        {
+
+                            Console.WriteLine("Ta vendendo mais do que tem? Me ensina essa");
+
+                        }
+                        else
+                        {
+
+                            vendaDinheiro = vendida * valor1;
+                            Console.WriteLine("Foram vendidos " + vendida + " " + produtoNome1 + " Totalizando: " + vendaDinheiro);
+                            quantidade1 -= vendida;
+
+                        }
+
+                    }
+
+                    else if ( menu_vendas == 2 ) 
+                    {
+
+                        Console.WriteLine("\nProduto: " + produtoNome2);
+                        Console.WriteLine("Valor: R$ " + valor2);
+                        Console.WriteLine("Estoque: " + quantidade2);
+
+                        Console.Write("Quantidade vendidida: ");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        vendida = int.Parse(Console.ReadLine());
+                        Console.ResetColor();
+
+                        if (vendida > quantidade2)
+                        {
+
+                            Console.WriteLine("Ta vendendo mais do que tem? Me ensina essa");
+
+                        }
+                        else
+                        {
+
+                            vendaDinheiro = vendida * valor2;
+                            Console.WriteLine("Foram vendidos " + vendida + " " + produtoNome2 + " Totalizando: " + vendaDinheiro);
+                            quantidade2 -= vendida;
+
+                        }
+
+                    }
+
+                    else if ( menu_vendas == 3 ) 
+                    {
+
+                        Console.WriteLine("\nProduto: " + produtoNome3);
+                        Console.WriteLine("Valor: R$ " + valor3);
+                        Console.WriteLine("Estoque: " + quantidade3);
+
+                        Console.Write("Quantidade vendidida: ");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        vendida = int.Parse(Console.ReadLine());
+                        Console.ResetColor();
+
+                        if (vendida > quantidade3)
+                        {
+
+                            Console.WriteLine("Ta vendendo mais do que tem? Me ensina essa");
+
+                        }
+                        else
+                        {
+
+                            vendaDinheiro = vendida * valor3;
+                            Console.WriteLine("Foram vendidos " + vendida + " " + produtoNome3 + " Totalizando: " + vendaDinheiro);
+                            quantidade3 -= vendida;
+
+                        }
+
+                    }
+
+                    else
+                    {
+
+                        Console.ForegroundColor= ConsoleColor.DarkRed;
+                        Console.WriteLine("Produto indisponível");
+                        Console.ResetColor();
+
+                    }
 
                 }
 
