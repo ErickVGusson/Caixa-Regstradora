@@ -112,7 +112,7 @@ namespace Caixa_Registradora
                     Console.WriteLine("1 - " + produtoNome1);
                     Console.WriteLine("2 - " + produtoNome2);
                     Console.WriteLine("3 - " + produtoNome3);
-                    Console.Write("\nDigite o produto para venda: ");
+                    Console.Write("\nDigite o número do produto para venda: ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     menu_vendas = int.Parse(Console.ReadLine());
                     Console.ResetColor();
