@@ -17,9 +17,9 @@ namespace Caixa_Registradora
             Console.Write("Deseja iniciar o sistema [S/N]: ");
             loop = Console.ReadLine();
 
-            string produtoNome1 = "", produtoNome2 = "", produtoNome3 = "";
-            float valor1 = 0, valor2 = 0, valor3 = 0;
-            int quantidade1 = 0, quantidade2 = 0, quantidade3 = 0;
+            string produtoNome1 = "Teste 1", produtoNome2 = "Teste 2", produtoNome3 = "Teste 3";
+            float valor1 = 10, valor2 = 100, valor3 = 1000;
+            int quantidade1 = 1000, quantidade2 = 1000, quantidade3 = 1000;
 
 
             while (loop.ToUpper() == "S")
